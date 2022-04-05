@@ -306,90 +306,6 @@ section.stay {
     background-size: cover;
     background-repeat: no-repeat;
 
-    .stay__box {
-        background-color: #fff; 
-        opacity: 0.9;
-        padding: 11rem 5rem 17rem;
-        position: relative;
-        height: 100%;
-        @include breakpoint(1200px) {
-            padding: 8rem 3rem 12rem;
-        }
-        &::before {
-            position: absolute;
-            content: "";
-            width: 40%;
-            max-width: 15rem;
-            height: 12px;
-            background-color: $cl-hl;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        h4 {
-            font-size: 2rem;
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 1.6rem;
-        }
-        .info {
-            padding: 1.2rem 0px;
-            border-bottom:  1px solid #ccc;
-            span {
-                font-size: 11px;
-                white-space: nowrap;
-                img {
-                    max-width: 22px;
-                    margin-right: 3px;
-                }
-            }
-        }
-        p.desc {
-            margin-top: 1.6rem;
-            font-size: 1.5rem;
-        }
-        .stay__link {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            font-size: 1.6rem;
-            text-transform: uppercase;
-            background-color: $cl-hl;
-            width: 14rem;
-            height: 12rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            @include breakpoint (1200px) {
-                width: 12rem;
-                height: 10rem;
-                font-size: 1.5rem;
-            }
-            span {
-                position: relative;
-                padding: 0.8rem 0px;
-                &::after {
-                    position: absolute;
-                    content: "";
-                    top: 100%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 0;
-                    height: 2px;
-                    background-color: #fff;
-                    transition: 0.2s;
-                }
-            }
-            &:hover {
-                opacity: 1;
-            }
-            &:hover span::after {
-                width: 80%;
-            }
-        }
-    }
     .stay__box--ct {
         background-color: $cl-hl;
         position: relative;
@@ -496,32 +412,44 @@ section.gallery {
 }
 
 section.slider-bt {
+    margin: 20px 0px;
     width: 100%;
     .item {
         flex-wrap: nowrap;
         img {
             width: 50%;
             object-fit: cover;
+            @include breakpoint(1200px) {
+                display:none;
+            }
         }
         .info {
             width: 50%;
-            padding: 4rem 2.5rem;
+            padding: 6rem 2.5rem 8rem;
             background-color: #ece6da;
+            @include breakpoint(1200px) {
+                width: 100%;
+            }
             h4 {
                 font-size: 2.4rem;
+                white-space: nowrap;
                 color: $cl-hl;
                 font-weight: 400;
-                margin-bottom: 1.4rem;
+                margin-bottom: 2rem;
             }
             ul {
-                margin-bottom: 3rem;
+                margin-bottom: 5rem;
                 li {
-                    margin-bottom: 5px;
+                    margin-bottom: 10px;
                     font-size: 1.5rem;
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
                     img {
-                        margin-right: 4px;
+                        margin-top: 6px;
+                        margin-right: 8px;
+                        max-width: 12px;
+                        object-fit: cover;
+                       
                     }
                 }
             }
@@ -529,9 +457,51 @@ section.slider-bt {
                 background-color: #fff;
                 color: $cl-hl;
                 text-transform: uppercase;
-                padding: 2px 2rem;
+                padding: 7px 6rem;
                 font-size: 1.6rem;
+                &:hover {
+                    background-color: $cl-hl;
+                    color: #fff;
+                    opacity: 1;
+                }
             }
         }
     }
+
+    .slick-prev,
+    .slick-next {
+        bottom: 0;
+        top: unset;
+        left: 50%;
+        right: unset;
+        width: 6.8rem;
+        height: 6.8rem;
+        background: #fff;
+        transform: translate(0, 0);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint(1600px) {
+            width: 4rem;
+            height: 4rem;
+        }
+        &::before {
+            content: none;
+        }
+        svg {
+            width: 30px;
+            stroke: $cl-hl;
+            @include breakpoint(1200px) {
+                width: 20px;
+            }
+        }
+    }
+    .slick-prev {
+        transform: translateX(-102%);
+    }
+    .slick-next {
+        transform: translateX(2%);
+    }
 }
+

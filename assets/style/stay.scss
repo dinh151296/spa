@@ -1,0 +1,361 @@
+@import './variable';
+@import './mixin';
+
+
+section.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../image/bg-hero-stay.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    @include breakpoint (768px) {
+        min-height: unset;
+    }
+    .hero__inner {
+        text-align: center;
+        padding: 1.5rem;
+        color: #fff;
+        h1 {
+            font-size: 4.6rem;
+            font-weight: bold;
+            margin-bottom: 1.6rem;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.399);
+            @include breakpoint(768px) {
+                font-size: 3.2rem;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 1.6rem;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.399);
+        }
+        hr {
+            width: 15rem;
+            height: 8px;
+            border: 0;
+            background-color: $cl-hl;
+            margin: 0 auto;
+        }
+    }
+}
+
+section.day-room {
+    width: 100%;
+    margin-bottom: 1rem;
+    .room-info {
+        padding: 3rem;
+        @include breakpoint(768px) {
+            flex-wrap: wrap;
+            padding: 3rem 0px;
+        }
+        .item {
+            text-align: center;
+            padding: 0px 7rem;
+            border-right: 1px solid #e3e0dc;
+            margin: 3rem 0px;
+            @include breakpoint(768px) {
+                width: 50%;
+                padding: 0px;
+            }
+            &:last-child {
+                border-right: 0px;
+            }
+            @include breakpoint(768px) {
+                &:nth-child(2) {
+                    border-right: 0px;
+                }
+            }
+            h6 {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+            p {
+                font-size: 1.8rem;
+                color: $cl-hl;
+            }
+        }
+    }
+    .room-desc {
+        margin: 6rem auto 0px;
+        max-width: 60rem;
+        @include breakpoint(768px) {
+            margin-top: 1rem;
+            max-width: unset;
+        }
+        a.room__link {
+            display: block;
+            width: fit-content;
+            margin: 8rem auto 0px;
+            padding: 13px 6rem;
+            background-color: $cl-hl;
+            color: #fff;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: 0.2s;
+            border: 1px solid $cl-hl;
+            &:hover {
+                background-color: #fff;
+                color: $cl-hl;
+                opacity: 1;
+            }
+            @include breakpoint(768px) {
+                margin-top: 4rem;
+            }
+            @include breakpoint(480px) {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+section.section-bg {
+    position: relative;
+    padding-bottom: 20rem;
+    @include breakpoint(768px) {
+        padding-bottom: 6rem;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #f7f5f0;
+        z-index: 2;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 38%;
+        bottom: 0;
+        left: 0;
+        background-image: url(../image/bg-song.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 3;
+    }
+    .container {
+        position: relative;
+        z-index: 4;
+    }
+}
+
+section.service {
+    margin-top: 10px;
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+    @include breakpoint(768px) {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+    }
+    .service__list {
+        flex-wrap: wrap;
+        max-width: 82rem;
+        margin: 4rem auto 0px;
+        li {
+            width: calc(100%/4);
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            @include breakpoint(768px) {
+                width: calc(100%/2);
+                padding: 2rem 4px;
+            }
+            img {
+                width: auto;
+                margin: 0 auto;
+            }
+            span {
+                display: block;
+                font-size: 1.5rem;
+                padding: 0px 0px 0px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+section.book-now {
+    padding: 8rem 0px;
+    background-color: $cl-hl;
+    @include breakpoint(768px) {
+        padding: 5rem 0px;
+    }
+    h2 {
+        color: #fff;
+        font-size: 3.6rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+        @include breakpoint(768px) {
+            font-size: 2.6rem;
+        }
+    }
+    .wrap__book {
+        justify-content: center;
+        flex-wrap: wrap;
+        .book__item {
+            margin: 3rem 0px;
+            padding: 0rem 4.5rem;
+            color: #fff;
+            border-right: 1px solid #db9c9f;
+            text-align: center;
+            @include breakpoint(768px) {
+                width: calc(100%/2);
+                padding: 0rem 1rem;
+            }
+            h6 {
+                font-size: 14px;
+                text-transform: uppercase;
+                color: #db9c9f;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 2.8rem;
+                @include breakpoint(768px) {
+                    font-size: 1.8rem;
+                }
+            }
+            span {
+                font-size: 2.8rem;
+                color: #db9c9f;
+            }
+            & > div {
+                p {
+                    margin: 0px 10px;
+                }
+            }
+            &:last-child {
+                border-right: 0px;
+            }
+            &:nth-child(2) {
+                border-right: 0px;
+            }
+        }
+    }
+    .book-link {
+        a {
+            display: block;
+            width: fit-content;
+            margin: 0rem auto 0px;
+            padding: 13px 6rem;
+            background-color: #fff;
+            color: $cl-hl;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: 0.2s;
+            border: 1px solid #fff;
+           
+          
+            @include breakpoint(480px) {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+section.package {
+    position: relative;
+    padding: 8rem 0px 7rem;
+    background-image: url(../image/bg-stay.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include breakpoint(768px) {
+        padding: 5rem 0px 4rem;
+    }
+    &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+    .stay__box {
+        padding: 6rem 5rem 17rem;
+        h4 {
+            color: $cl-hl;
+            margin-bottom: 3.6rem;
+        }
+    }
+    .container {
+        .row {
+            & > [class*="col-"]  {
+                padding-right: 18px;
+                padding-left: 18px;
+                @include breakpoint (1200px) {
+                    padding-right: 5px;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+section.room-slider {
+    .item.slick-active {
+        margin: 0px 10px;
+    }
+    .slick-prev,
+    .slick-next {
+        bottom: unset;
+        top: 50%;
+        left: 50%;
+        right: unset;
+        width: 6.6rem;
+        height: 6.6rem;
+        background: $cl-hl;
+        transform: translate(0, -50%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint(1600px) {
+            width: 4rem;
+            height: 4rem;
+        }
+        &::before {
+            content: none;
+        }
+        svg {
+            width: 30px;
+            stroke: #fff;
+            @include breakpoint(1200px) {
+                width: 20px;
+            }
+        }
+    }
+    .slick-prev {
+        transform: translate(-102%, -50%);
+    }
+    .slick-next {
+        transform: translate(2%), -50%;
+    }
+}
