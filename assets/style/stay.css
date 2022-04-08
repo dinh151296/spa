@@ -417,8 +417,14 @@ section.package .container .row > [class*="col-"] {
   }
 }
 
-section.room-slider .item.slick-active {
-  margin: 0px 10px;
+section.room-slider .item.slick-slide {
+  padding: 0px 5px;
+}
+
+section.room-slider .item {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 section.room-slider .slick-prev,
@@ -430,8 +436,8 @@ section.room-slider .slick-next {
   width: 6.6rem;
   height: 6.6rem;
   background: #bc202f;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -442,6 +448,18 @@ section.room-slider .slick-next {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+section.room-slider .slick-prev:hover,
+section.room-slider .slick-next:hover {
+  background-color: #fff;
+}
+
+section.room-slider .slick-prev:hover svg,
+section.room-slider .slick-next:hover svg {
+  stroke: #bc202f;
 }
 
 @media only screen and (max-width: 1600px) {
@@ -449,6 +467,14 @@ section.room-slider .slick-next {
   section.room-slider .slick-next {
     width: 4rem;
     height: 4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section.room-slider .slick-prev,
+  section.room-slider .slick-next {
+    width: 3rem;
+    height: 3rem;
   }
 }
 
@@ -461,6 +487,8 @@ section.room-slider .slick-prev svg,
 section.room-slider .slick-next svg {
   width: 30px;
   stroke: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -471,12 +499,10 @@ section.room-slider .slick-next svg {
 }
 
 section.room-slider .slick-prev {
-  -webkit-transform: translate(-102%, -50%);
-          transform: translate(-102%, -50%);
+  left: 25%;
 }
 
 section.room-slider .slick-next {
-  -webkit-transform: translate(2%), -50%;
-          transform: translate(2%), -50%;
+  left: 75%;
 }
 /*# sourceMappingURL=stay.css.map */
